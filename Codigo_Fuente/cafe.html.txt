@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+		 rel="stylesheet" 
+		 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+		  crossorigin="anonymous"
+		  />
+	<title></title>
+</head>
+<body>
+<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">LOGO</a>
+			<ul class="nav">
+		        <li class="nav-item dropdown">
+		          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="acercade.html">Acerca de</a>
+		        </li>
+
+		        <li class="nav-item ">
+		          <a class="nav-link" href="Productos.html">Productos</a>
+		        </li>
+		      </ul>
+		     <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg"> 
+		</nav>
+		<div class="cover-sprine d-flex justify-content-center align-items-center flex-column">
+			<h1>PEQUEÑA TIENDA</h1>
+			<p>EN LINEA</p>
+			<button class="btn btn-primary">Conoce más</button>
+		</div>
+	</header>
+	<p></p>
+		<center><h2>NUESTRAS PRESENTACIONES</h2></center>
+		<section>
+			<!--TIRA DE PRODUCTOS-->
+			<div class="container mt-2 mb-2">
+   		<div class="row justify-content-center">
+   			<div class="col-2 col-sm-6 col-md-4 col-lg-3 mt-2">
+	   			<div class="card">
+	  				<div title="CAFÉ MOLIDO" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/20210911_125747.jpg);">	
+	  					</div>
+	  				<div class="card-body">
+	    			  <center><h5 class="card-title">CAFÉ MOLIDO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$25.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">500 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+	 			  </div>
+	 			</div>
+	 		</div>
+	 		<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">	
+			   		<div class="card">
+			          <div title="taza de café y granos de café en un costal" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/20210911_132714.jpg);">	
+	  					</div>
+			         <div class="card-body">
+	    			  	<center><h5 class="card-title">CAFÉ MOLIDO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$13.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">250 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+			       </div>
+			     </div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2"> 
+	   				<div class="card">
+	  					<div title="chica tomando taza de café" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/CAF%C3%89GRANOJPG.jpg);">	
+	  					</div>
+	  					<div class="card-body">
+	    			  	<center><h5 class="card-title">CAFÉ TOSTADO EN GRANO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$25.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">500 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+	 					 </div>
+					</div>
+			</div>	
+   		</div>
+   	</div>	
+   </section>
+   <section>
+			<!--TIRA DE PRODUCTOS-->
+			<div class="container mt-2 mb-2">
+   		<div class="row justify-content-center">
+   			<div class="col-2 col-sm-6 col-md-4 col-lg-3 mt-2">
+	   			<div class="card">
+	  				<div title="CAFÉ MOLIDO" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/20210911_132714.jpg);">	
+	  					</div>
+	  				<div class="card-body">
+	    			  <center><h5 class="card-title">CAFÉ MOLIDO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$13.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">250 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+	 			  </div>
+	 			</div>
+	 		</div>
+	 		<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">	
+			   		<div class="card">
+			          <div title="taza de café y granos de café en un costal" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/CAFEJPG.jpg);">	
+	  					</div>
+			         <div class="card-body">
+	    			  	<center><h5 class="card-title">CAFÉ TOSTADO EN GRANO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$13.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">250 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+			       </div>
+			     </div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2"> 
+	   				<div class="card">
+	  					<div title="chica tomando taza de café" class="cover cover-small" style="background-image: url(file:///C:/xampp/htdocs/pagina_comercio/img/CAF%C3%89GRANOJPG.jpg);">	
+	  					</div>
+	  					<div class="card-body">
+	    			  	<center><h5 class="card-title">CAFÉ TOSTADO EN GRANO</h5></center>
+	   				 <p class="card-text">Disponible en Tueste Medio o Tueste Medio Alto.</p>
+	   				 <span class="badge text-bg-success">$25.000COP</span>
+	   				 <span class="badge rounded-pill text-bg-secondary">500 gramos</span>
+	   				 <P></P>
+	   				 <img src="file:///C:/xampp/htdocs/pagina_comercio/cart-check-fill.svg">
+	   				 <button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">agregar al carrito</button>
+	 					 </div>
+					</div>
+			</div>	
+   		</div>
+   	</div>	
+   </section>
+   <footer id="footer">
+		<div class="container text-center">
+			<p>&copy; <a href="#">Café de la peña.</a> Todos los derechos reservados.</p>
+		</div>
+</body>
+</html>

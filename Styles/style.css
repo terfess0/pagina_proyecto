@@ -1,0 +1,79 @@
+
+body{
+	margin: 0cm;
+		font-family:'Noto Sans', sans-serif;
+}
+.img{
+	border-image:22px;
+}
+
+.cover{
+	height: 420px;
+	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_1663296429105.jpg);
+	color: white;
+	background-size:cover;
+	background-position: center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken; 
+}
+.cover-small{
+	height: 200px;
+	background-blend-mode:normal;
+}
+.card{
+	border: 0!important:;
+	box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -3px rgba( 0, 0, 0, 0.06);
+}
+.card-title{
+	min-height:3rem;
+}
+.card-text{
+	min-height:10rem;
+}
+.class-row{
+	height: 100px;
+}
+.responsive-iframe{
+	position:relative;
+	padding-top:56.26%;
+}
+.responsive-iframe iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+}
+.product-stripe{
+	overflow-x:scroll;
+	padding-top:1rem;
+	padding-bottom:1rem;
+}
+.stripe-container{
+	display:flex;
+}
+.stripe-container.card{
+	width:300px;
+	flex-shrink:0;
+	margin-right:1rem;
+}
+.cover-sprine{
+	height: 420px;
+	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_janko-ferlic-h9iq22jjlgk-unsplash.jpg);
+	color: white;
+	background-size:cover;
+	background-position: center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken; 
+}
+.footer{
+	color:white;
+}
+.cover--sprine{
+	height: 420px;
+	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_cafe_de_la_pe%C3%B1a.png);
+	color: white;
+	background-size:cover;
+	background-position: center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken; 
+}
