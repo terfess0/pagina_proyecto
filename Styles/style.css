@@ -9,7 +9,7 @@ body{
 
 .cover{
 	height: 420px;
-	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_1663296429105.jpg);
+	background-image: url(../Resources/img/rsz_1663296429105.jpg);
 	color: white;
 	background-size:cover;
 	background-position: center;
@@ -21,7 +21,7 @@ body{
 	background-blend-mode:normal;
 }
 .card{
-	border: 0!important:;
+	border: 0!important;
 	box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -3px rgba( 0, 0, 0, 0.06);
 }
 .card-title{
@@ -58,7 +58,7 @@ body{
 }
 .cover-sprine{
 	height: 420px;
-	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_janko-ferlic-h9iq22jjlgk-unsplash.jpg);
+	background-image: url(../Resources/img/rsz_janko-ferlic-h9iq22jjlgk-unsplash.jpg);
 	color: white;
 	background-size:cover;
 	background-position: center;
@@ -70,7 +70,7 @@ body{
 }
 .cover--sprine{
 	height: 420px;
-	background-image: url(file:///C:/xampp/htdocs/pagina_comercio/rsz_cafe_de_la_pe%C3%B1a.png);
+	background-image: url(../Resources/img/rsz_cafe_de_la_pe%C3%B1a.png);
 	color: white;
 	background-size:cover;
 	background-position: center;
