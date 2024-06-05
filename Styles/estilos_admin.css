@@ -1,0 +1,53 @@
+body{
+	margin: 0cm;
+		font-family:'Noto Sans', sans-serif;
+}
+.img{
+	border-image:22px;
+}
+
+.cover{
+	height: 100%;
+	background-image: url(../Resources/img/rsz_karl-fredrickson-tyizeciz_60-unsplash.jpg);
+	color: white;
+	background-size:cover;
+	background-position: center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken; 
+}
+.cover-small{
+	height: 100%;
+	background-blend-mode:normal;
+}
+.card{
+	border: 0!important;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -3px rgba( 0, 0, 0, 0.06);
+}
+.card-title{
+	min-height:3rem;
+}
+.card-text{
+	min-height:10rem;
+}
+.class-row{
+	height: 100px;
+}
+.responsive-iframe{
+	position:relative;
+	padding-top:56.26%;
+}
+.responsive-iframe iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+}
+.cover-sprine{
+	height: 420px;
+	background-image: url(../Resources/img/rsz_1ante-samarzija-lsmu0ruhuok-unsplash.jpg);
+	color: white;
+	background-size:cover;
+	background-position: center;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: darken;
+}

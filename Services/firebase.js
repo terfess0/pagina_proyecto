@@ -1,12 +1,9 @@
 
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  FacebookAuthProvider,
-  signInWithPopup,
   signOut,
   onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
@@ -37,41 +34,31 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBxSNlsFYLpGDcH0Nby5bkoaPMcwwo7oSI",
-  authDomain: "trabajodonaciones.firebaseapp.com",
-  projectId: "trabajodonaciones",
-  storageBucket: "trabajodonaciones.appspot.com",
-  messagingSenderId: "731615721762",
-  appId: "1:731615721762:web:f2e0c850e45d28b3a5cd7b",
-  measurementId: "G-298Y4KM7ZY"
-}
+  apiKey: "AIzaSyCP4gFyC2sPXXbHpq0J8ZietRL4rkcB0hc",
+  authDomain: "trabajocafe-956a4.firebaseapp.com",
+  projectId: "trabajocafe-956a4",
+  storageBucket: "trabajocafe-956a4.appspot.com",
+  messagingSenderId: "518733260293",
+  appId: "1:518733260293:web:7f027942dfc8a2301a5e6c",
+  measurementId: "G-05LC2XED51"
+};
+
+
 
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth()
-
+const analytics = getAnalytics(app);
 const db = getFirestore()
 
 const storage = getStorage()
 //referencia a storage firebase
 const storageRef = ref(storage)
 
-const provider = new FacebookAuthProvider()
-provider.addScope('user_birthday')
-
-
-export const registrarusuario = (email, password) =>
-  createUserWithEmailAndPassword(auth, email, password)
 
 export const iniciarsesion = (email, password) =>
   signInWithEmailAndPassword(auth, email, password)
 
-provider.setCustomParameters({
-  'display': 'popup'
-})
-
-export const iniciarsesionfacebook = () =>
-  signInWithPopup(auth, provider)
 
 export const agregardatos = (nit, nombre, tipo, estado, cantidad, fecha) =>
   addDoc(collection(db, "donaciones"), {
@@ -91,7 +78,7 @@ export function userstate() {
       const uid = user.uid
     } else {
       Swal.fire({
-        title: 'Sesión cerrada',
+        title: 'Sesión finalizada',
         icon: 'info'
       }).then((result) => {
         if (result.isConfirmed || result.isDismissed) {
@@ -171,22 +158,15 @@ export const subirNewImgCarousel = (file, randomName) => {
 export const setNewImgCarousel = (urlStorage) => {
   const carouselRef = collection(db, "carruselImgs")
   const updateData = {}
-  updateData['imagen'] = urlStorage 
+  updateData['imagen'] = urlStorage
   addDoc(carouselRef, updateData)
 }
 //borrar imagen carrusel
 export const deleteImgCarrusel = (idDoc) =>
   deleteDoc(doc(db, "carruselImgs", idDoc))
 
-  
-//obtener las url de imagenes del carousel (url en firestore a recurso en storage)
-export const getCarouselImgs = () =>
-  getDoc(doc(db, "imagenes", "carousel"))
 
-export const getCarouselImgsAditional = () =>
-  getDocs(collection(db, "carruselImgs"))
 
-//--------------------------------------------
 
 
 
@@ -213,3 +193,8 @@ export const getContentImgs = () =>
   getDoc(doc(db, "imagenes", "contenido"))
 
 //--------------------------------------------
+
+
+//obtener las url de imagenes del carousel (url en firestore a recurso en storage)
+export const getAnuncios = () =>
+  getDocs(collection(db, "anuncios"))
