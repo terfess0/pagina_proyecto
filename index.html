@@ -36,7 +36,6 @@
 		<div class="cover d-flex justify-content-center align-items-center flex-column">
 			<h1>Café De La Peña</h1>
 			<p>El mejor café de la ciudad</p>
-			<button class="btn btn-primary">Conoce más</button>
 		</div>
 	</header>
 	<section>
@@ -87,25 +86,24 @@
 							</div>
 							<div class="col-sm-6 col-md-8">
 								<h2>Escríbenos</h2>
-								<form id="contact-form" class="contact-form" name="contact-form" method="post"
-									action="send-mail.php">
-									<div class="row">
-										<div class="form-group col-sm-6 name-field">
-											<input type="text" name="name" class="form-control" required="required"
-												placeholder="Nombres y Apellidos">
-										</div>
-										<div class="form-group col-sm-6 email-field">
-											<input type="email" name="email" class="form-control" required="required"
-												placeholder="Correo electrónico">
-										</div>
-										<div class="form-group col-sm-12">
-											<textarea name="message" id="message" required class="form-control" rows="8"
-												placeholder="Tu mensaje"></textarea>
-										</div>
+
+								<div class="row">
+									<div class="form-group col-sm-6 name-field">
+										<input type="text" id="nombres" class="form-control" required="required"
+											placeholder="Nombres y Apellidos">
 									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-default">Enviar</button>
+									<div class="form-group col-sm-6 email-field">
+										<input type="email" id="correo" class="form-control" required="required"
+											placeholder="Correo electrónico">
 									</div>
+									<div class="form-group col-sm-12">
+										<textarea id="mensage" required class="form-control" rows="8"
+											placeholder="Tu mensaje"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-default" id="sendContacto">Enviar</button>
+								</div>
 							</div>
 	</section>
 	<section>

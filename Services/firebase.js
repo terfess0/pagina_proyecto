@@ -44,8 +44,6 @@ const firebaseConfig = {
 };
 
 
-
-
 const app = initializeApp(firebaseConfig)
 const auth = getAuth()
 const analytics = getAnalytics(app);
@@ -58,17 +56,6 @@ const storageRef = ref(storage)
 
 export const iniciarsesion = (email, password) =>
   signInWithEmailAndPassword(auth, email, password)
-
-
-export const agregardatos = (nit, nombre, tipo, estado, cantidad, fecha) =>
-  addDoc(collection(db, "donaciones"), {
-    nitCedula: nit,
-    nombre: nombre,
-    tipo: tipo,
-    estado: estado,
-    cantidad: cantidad,
-    fecha: fecha
-  })
 
 export const logout = () => signOut(auth)
 
@@ -89,112 +76,68 @@ export function userstate() {
   })
 }
 
-
-//obtener donacion
-export const getDonacion = (nit) => {
-  const q = query(collection(db, "donaciones"), where("nitCedula", "==", nit))
-
-  const querySnapshot = getDocs(q)
-  return querySnapshot
-}
-
-//hacer nueva solicitud (usuario - index)
-export const addSoli = (nombre, tel, email, mensaje) =>
-  addDoc(collection(db, "solicitudes"), {
-    nombreSolicitud: nombre,
-    telSolicitud: tel,
-    emailSolicitud: email,
-    cuerpoSolicitud: mensaje,
-    estadoSolicitud: false,
-    fechaSolicitud: serverTimestamp()
-  })
-
-//buscar solicitud existente con mismo mensaje (evitar duplicadas en el momento)
-export const getSoliByContent = async (mensaje) => {
-  const soliQuery = query(collection(db, "solicitudes"), where("cuerpoSolicitud", "==", mensaje))
-  const querySnapshot = await getDocs(soliQuery)
-  if (!querySnapshot.empty) {
-    return querySnapshot.docs[0].data()
-  }
-  return null
-}
-
-
-//solicitudes (admin)
-export const getSolicitudes = () =>
-  getDocs(collection(db, "solicitudes"))
-
-export const updateEstadoSoli = (idSoli, estado) => {
-  const solicitudRef = doc(db, "solicitudes", idSoli)
-  updateDoc(solicitudRef, {
-    estadoSolicitud: estado
-  })
-}
-//--------------------------------------------
-//----------CARRUSEL---------------
-
-//metodos de storage----------------
-export const subirImgCarousel = (file, fileName) => {
-  const carouselRef = ref(storage, 'imagenes/carrusel/' + fileName)
-  return uploadBytes(carouselRef, file).then((snapshot) => {
-    return getDownloadURL(snapshot.ref)
-  })
-}
-//metodos firestore
-export const updateImgCarousel = (urlStorage, nameImg) => {
-  const carouselRef = doc(db, "carruselImgs", nameImg)
-  const updateData = {}
-  updateData['imagen'] = urlStorage // Utilizamos corchetes y la variable nameImg como nombre de propiedad
-  updateDoc(carouselRef, updateData)
-}
-//nueva imagen carousel (storage)
-export const subirNewImgCarousel = (file, randomName) => {
-  const carouselRef = ref(storage, 'imagenes/carrusel/' + randomName)
-  return uploadBytes(carouselRef, file).then((snapshot) => {
-    return getDownloadURL(snapshot.ref)
-  })
-}
-//nueva imagen carousel (firestore)
-export const setNewImgCarousel = (urlStorage) => {
-  const carouselRef = collection(db, "carruselImgs")
-  const updateData = {}
-  updateData['imagen'] = urlStorage
-  addDoc(carouselRef, updateData)
-}
-//borrar imagen carrusel
-export const deleteImgCarrusel = (idDoc) =>
-  deleteDoc(doc(db, "carruselImgs", idDoc))
-
-
-
-
-
-
-//---------CONTENIDO IMAGENES INDEX----------
-
-//metodos de storage----------------
-export const subirImgContent = (file, fileName) => {
-  const carouselRef = ref(storage, 'imagenes/contenido/' + fileName)
-  return uploadBytes(carouselRef, file).then((snapshot) => {
-    return getDownloadURL(snapshot.ref)
-  })
-}
-
-//metodos firestore
-export const updateImgContent = (urlStorage, nameImg) => {
-  const carouselRef = doc(db, "imagenes", "contenido")
-  const updateData = {}
-  updateData[nameImg] = urlStorage // Utilizamos corchetes y la variable nameImg como nombre de propiedad
-  updateDoc(carouselRef, updateData)
-}
-
-//obtener las url de imagenes del contenido (url en firestore a recurso en storage)
-export const getContentImgs = () =>
-  getDoc(doc(db, "imagenes", "contenido"))
-
-//--------------------------------------------
-
-
 //obtener las url de imagenes del carousel (url en firestore a recurso en storage)
 export const getAnuncios = () =>
   getDocs(collection(db, "anuncios"))
+
+export const addAnuncio = (t, d, i) =>
+  addDoc(collection(db, "anuncios"), {
+    titulo: t,
+    descripcion: d,
+    imagen: i
+  })
+
+export const deleteAnuncio = (idDoc) =>
+  deleteDoc(doc(db, "anuncios", idDoc))
+
+export const updateAnuncio = (doce, updateData) => {
+  updateDoc(doc(db, "anuncios", doce), updateData)
+}
+
+export const addImgAnuncioStorage = (file, randomName) => {
+  const anuncioRef = ref(storage, 'imagenes/' + randomName)
+  return uploadBytes(anuncioRef, file).then((snapshot) => {
+    return getDownloadURL(snapshot.ref)
+  })
+}
+
+export const regContacto = (nom, corr, mess) =>
+  addDoc(collection(db, "contactos"), {
+    nombres: nom,
+    correo: corr,
+    mensaje: mess
+  })
+
+export const getContactos = () =>
+  getDocs(collection(db, "contactos"))
+
+export const deleteContacto = (idDoc) =>
+  deleteDoc(doc(db, "contactos", idDoc))
+
+
+export const getProductos = () =>
+  getDocs(collection(db, "productos"))
+
+export const addProducto = (t, d, p, c, i) =>
+  addDoc(collection(db, "productos"), {
+    titulo: t,
+    descripcion: d,
+    precio: p,
+    cantidad: c,
+    imagen: i
+  })
+
+export const deleteProducto = (idDoc) =>
+  deleteDoc(doc(db, "productos", idDoc))
+
+export const updateProducto = (doce, updateData) => {
+  updateDoc(doc(db, "productos", doce), updateData)
+}
+
+export const addImgProductoStorage = (file, randomName) => {
+  const productoRef = ref(storage, 'imagenes/' + randomName)
+  return uploadBytes(productoRef, file).then((snapshot) => {
+    return getDownloadURL(snapshot.ref)
+  })
+}
+

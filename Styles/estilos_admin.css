@@ -9,7 +9,7 @@ body{
 .cover{
 	height: 100%;
 	background-image: url(../Resources/img/rsz_karl-fredrickson-tyizeciz_60-unsplash.jpg);
-	color: white;
+	color: rgb(140, 67, 43);
 	background-size:cover;
 	background-position: center;
 	background-color: rgba(0,0,0,0.5);
@@ -50,4 +50,8 @@ body{
 	background-position: center;
 	background-color: rgba(0,0,0,0.5);
 	background-blend-mode: darken;
+}
+
+.table {
+	padding: 20px;
 }

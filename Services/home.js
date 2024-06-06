@@ -1,9 +1,9 @@
-import { userstate, logout } from "./firebase.js";
+import { userstate, logout } from "../Services/firebase.js";
 
 userstate();
-const registrar = document.getElementById('btnreg');
+
 const sesion = document.getElementById('btnatras');
-const buscar_donacion = document.getElementById('btnsearch');
+
 
 async function cerrarsesion() {
     try {
@@ -20,15 +20,6 @@ async function cerrarsesion() {
     }
 }
 
-
-function getFechaActual() {
-    const fechaActual = new Date();
-    const nombresMeses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-    const dia = fechaActual.getDate();
-    const mes = nombresMeses[fechaActual.getMonth()];
-    const anio = fechaActual.getFullYear();
-    return `${dia} de ${mes} de ${anio}`;
-}
 
 window.addEventListener("DOMContentLoaded", () => {
     sesion.addEventListener('click', cerrarsesion);

@@ -7,14 +7,12 @@
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Styles/estilos_admin.css">
-    <link rel="stylesheet" type="text/css" href="main.css" href="bootstrap.main.css">
 
     <link
         href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-
 
     <!--alertas-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -23,7 +21,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="Templates/login.html">
+            <a class="navbar-brand" href="../Templates/login.html">
                 <img src="../Resources/img/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
             </a>
             <ul class="nav">
@@ -32,7 +30,7 @@
                         Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showContent('content2')">Acerca de</a>
+                    <a class="nav-link" href="#" onclick="showContent('content2')">Contactos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="showContent('content3')">Productos</a>
@@ -53,138 +51,92 @@
                 <!-- Contenido principal -->
                 <div class="main-content text-light">
 
+                    <div id="content1" class="content active" style="display: none;">
+                        <h2>Formulario de Nuevo Anuncio</h2>
 
-                    <div id="content1" class="content">
-                        <h2>Formulario de nuevo anuncio</h2>
-                        <br>
-                        <label for="edttitulo">Titulo</label><br>
-                        <input type="text" id="edttitulo" placeholder="Por ejemplo: El mejor cafe" required><br>
-                        <label for="edtdescripcion">Descripción:</label><br>
-                        <input type="text" id="edtdescripcion" placeholder="Descripcion anuncio" required><br>
-                        <label for="edtimagen">Link de imagen</label><br>
-                        <input type="text" id="edtimagen" placeholder="Link de la imagen" required><br>
-
-                        <br>
-                        <button class="btn btn-success btn-outline-light" id="btnreg">Registrar Anuncio</button>
-                        <br>
-                    </div>
-
-
-                    <div id="content2" class="content" style="display: none;">
-                        <h2>Consultar donación</h2>
-                        <br>
-                        <label for="edtnit_search">Nit/Cedula: </label><br>
-                        <input type="number" id="edtnit_search" placeholder="Ingrese su Nit o Cedula" required>
-                        <input type="submit" value="Buscar" class="btn btn-success btn-outline-light" id="btnsearch">
-                        <br>
-                        <table class="table table-striped table-bordered table-responsive" id="result_consulta">
-                            <!-- Resultados de la consulta -->
-                        </table>
-                    </div>
+                        <div class="mb-3">
+                            <label for="edttitulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="edttitulo"
+                                placeholder="Por ejemplo: El mejor café" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edtdescripcion" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="edtdescripcion"
+                                placeholder="Descripción anuncio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edtimagen" class="form-label">Imagen del Anuncio</label>
+                            <input type="file" class="form" id="fileInputNew" accept="image/*" required>
+                        </div>
+                        <button class="btn btn-success" id="btnreg">Registrar Anuncio</button>
 
 
-                    <div id="content3" class="content" style="display: none;">
-                        <div class="container">
-                            <h2>Manejar las imagenes del carrusel (pagina principal)</h2>
-                            <br>
-                            <p
-                                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                                Recuerda que deben ser imagenes de tipo JPG en formato horizontal, si las imagenes no
-                                son de
-                                este tipo usa
-                                una
-                                herramienta en linea para convertirlas a JPG
-                            </p>
-
-                            <div class="card mt-5 mb-5 w-100 text-start">
-
-                                <div class="image-upload mt-5 mb-5 w-100 text-start m-1" id="imagenesAdicionales"
-                                    style="display: none;">
-
-                                </div>
-
-                                <div>
-                                    <button class="btn btn-dark m-1" onclick="opcionVerAddImgCarousel()"> + Agregar
-                                        Nueva
-                                        Imagen</button>
-                                </div>
-
-                                <div class="image-upload m-1" id="boxNuevaImagenC" style="display: none;">
-                                    <img class="rounded" id="nuevaImgCarousel" style="max-height: 200px; width: 300px;">
-                                    <input type="file" class="form" id="fileInputNew" accept="image/*">
-                                    <button id="uploadNewImgCarousel" class="btn btn-success m-1">Subir Imagen
-                                        Nueva</button>
-                                </div>
-
-                                <!-- Spinner de carga de imagen -->
-                                <div class="d-flex justify-content-center align-items-center h-100 mt-3">
-                                    <div id="loadImageCarousel" class="spinner-border spinner-border-xxl text-primary"
-                                        style="display: none;">
-                                    </div>
-                                </div>
-
-                            </div>
-
+                        <div class="mt-5">
+                            <table class="table table-bordered table-responsive bg-light" id="contain_admin_anuncios">
+                            </table>
                         </div>
 
-                        <div class="container mt-5 mb-5 w-100 text-center">
-                            <h2>Manejar las imagenes del cuerpo-contenido (pantalla principal)</h2>
-                            <br>
-                            <p
-                                style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                                Recuerda que deben ser imagenes de tipo JPG en formato horizontal, si las imagenes no
-                                son de
-                                este tipo usa
-                                una
-                                herramienta en linea para convertirlas a JPG
-                            </p>
 
-                            <div class="card mt-3">
-                                <h5>¿Quienes somos?</h5>
+                    </div>
 
-                                <div class="image-upload m-1">
-                                    <img class="rounded" id="viewCont1" style="max-height: 200px; width: 300px;">
-                                    <input type="file" class="form" id="fileInput4" accept="image/*">
-                                    <button id="uploadCont1" class="btn btn-warning m-1">Subir Imagen</button>
-                                </div>
 
-                                <div class="image-upload m-1">
-                                    <img class="rounded" id="viewCont2" style="max-height: 200px; width: 300px;">
-                                    <input type="file" class="form" id="fileInput5" accept="image/*">
-                                    <button id="uploadCont2" class="btn btn-warning m-1">Subir Imagen</button>
-                                </div>
-
-                            </div>
-
-                            <!-- Spinner de carga de imagen -->
-                            <div class="d-flex justify-content-center align-items-center h-100 mt-3">
-                                <div id="loadImagesContenido" class="spinner-border spinner-border-xxl text-info"
-                                    style="display: none;">
-                                </div>
-                            </div>
-
-                            <div class="card mt-5">
-                                <h5>¿Que nos motiva?</h5>
-                                <div class="image-upload mb-1">
-                                    <img class="rounded" id="viewCont3" style="max-height: 200px; width: 300px;">
-                                    <input type="file" class="form" id="fileInput6" accept="image/*">
-                                    <button id="uploadCont3" class="btn btn-warning m-1">Subir Imagen</button>
-                                </div>
-                            </div>
+                    <div id="content2" class="content active" style="display: none;">
+                        <h2>Contactos de personas reales</h2>
+                        <div class="mt-5">
+                            <table class="table table-bordered table-responsive bg-light" id="contain_admin_contactos">
+                            </table>
                         </div>
                     </div>
 
 
+                    <div id="content3" class="content active" style="display: none;">
+                        <h2>Formulario de Nuevo Producto</h2>
+
+                        <div class="mb-3">
+                            <label for="edttitle" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="edttitle"
+                                placeholder="Por ejemplo: El mejor café" required>
+                        </div>
 
 
+                        <div class="mb-3">
+                            <label for="edtdescrip" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="edtdescrip" placeholder="Descripción producto"
+                                required>
+                        </div>
 
+
+                        <div class="mb-3">
+                            <label for="edtprecio" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="edtprecio" placeholder="Precio" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="edtcantidad" class="form-label">Cantidad</label>
+                            <input type="text" class="form-control" id="edtcantidad" placeholder="Cantidad" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edtimagen" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form" id="fileInputProducto" accept="image/*" required>
+                        </div>
+
+                        <button class="btn btn-success" id="btnadd">Registrar Producto</button>
+
+
+                        <div class="mt-5">
+                            <table class="table table-bordered table-responsive bg-light" id="contain_admin_productos">
+                            </table>
+                            
+                        </div>
+
+
+                    </div>
                 </div>
 
-
-
-
-
             </div>
+        </div>
     </header>
 
 
@@ -213,6 +165,12 @@
     <script type="text/javascript" src="../Services/bootstrap.min.js"></script>
 
     <script type="module" src="../Services/home.js"></script>
+    <script type="module" src="../Services/aggAnuncio.js"></script>
+    <script type="module" src="../Services/getAnunciosAdmin.js"></script>
+    <script type="module" src="../Services/getContactosAdmin.js"></script>
+
+    <script type="module" src="../Services/aggProduct.js"></script>
+    <script type="module" src="../Services/getProductosAdmin.js"></script>
 </body>
 
 </html>
